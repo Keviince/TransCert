@@ -1,5 +1,7 @@
 # TransCert
-A simple tool to allow you to pull you ssl certificate from a server.
+A simple tool to allow you to pull you ssl certificate from a server.  
+
+[English](https://github.com/Keviince/TransCert/blob/main/README.md)   [简体中文](https://github.com/Keviince/TransCert/blob/main/README_zh.md)
 
 ## Requirements
 [acme.sh](https://github.com/acmesh-official/acme.sh)  
