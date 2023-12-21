@@ -1,7 +1,7 @@
 # TransCert
 一个简单的工具，允许您从服务器获取 SSL 证书。 
 
-[English](https://github.com/Keviince/TransCert/blob/main/README.md)
+[English](https://github.com/Keviince/TransCert)
 
 ## 要求
 [acme.sh](https://github.com/acmesh-official/acme.sh)  
