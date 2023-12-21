@@ -29,7 +29,7 @@ push_cert() {
         local CERT_SIG=$CERT_HOME"/"$CERT_DOMAIN"/"$CERT_DOMAIN".sig"
         tar -czPf $CERT_TGZ --transform "s,^.*/.*/,,g" $CERT_PEM $CERT_KEY
         gpg --batch --yes --passphrase $2 -q -c $CERT_TGZ
-        sha256sum $CERT_GPG | awk '{print $1}' > $CERT_SIG
+        sha256sum $CERT_TGZ | awk '{print $1}' > $CERT_SIG
         rm -f $CERT_TGZ $CERT_PEM
         echo "Finish pushing "$1"..."
         return 0
