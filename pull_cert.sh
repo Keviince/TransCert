@@ -44,9 +44,9 @@ check_cert_update() {
 	if [ -f $LOCAL_CERT_GPG ]; then
 		echo "Local certificate found. Checking SHA256 Hash..."
 		local LOCAL_CERT_SIG=$(sha256sum $LOCAL_CERT_GPG | awk '{print $1}')
-		local REMOTE_CERT_SIG=$CERT_SERVER"/"$CERT_DOMAIN"/"$CERT_DOMAIN".sig"
-		REMOTE_CERT_SIG=$(curl --silent $REMOTE_CERT_SIG)
-		if [ $LOCAL_CERT_SIG = $REMOTE_CERT_SIG ]; then
+		local REMOTE_CERT_SIG_URL=$CERT_SERVER"/"$CERT_DOMAIN"/"$CERT_DOMAIN".sig"
+		REMOTE_CERT_SIG=$(curl --silent $REMOTE_CERT_SIG_URL)
+		if [ "$LOCAL_CERT_SIG" == "$REMOTE_CERT_SIG" ]; then
 			echo "Local certificate is up to date."
 			return 0
 		else
