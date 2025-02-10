@@ -87,8 +87,8 @@ main() {
 	check_cert_update
 	if [ $? -eq 1 ]; then
 		cert_decompress
+  		after_pull
 	fi
-	after_pull
 	echo "Finish pulling "$CERT_DOMAIN"."
 }
 
